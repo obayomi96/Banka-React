@@ -5,6 +5,12 @@ const signupUrl = () => {
   return url;
 };
 
+const loginUrl = () => {
+  const url = `${baseUrl}/auth/signin`;
+  return url;
+};
+
 export {
   signupUrl,
+  loginUrl,
 };
