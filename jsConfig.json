@@ -13,7 +13,7 @@
       ],
       "@Views/*": [
         "./src/views/*"
-      ],
+      ]
     }
   },
   "exclude": ["node_modules", "build"]
