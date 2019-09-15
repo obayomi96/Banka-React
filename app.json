@@ -1,0 +1,14 @@
+{
+  "name": "BankaReact",
+  "description": "Review apps for new PRs to the repo",
+  "scripts": {},
+  "env": {
+    "SECRET_KEY": {
+      "required": true
+    }
+  },
+  "formation": {},
+  "addons": [],
+  "buildpacks": [],
+  "stack": "heroku-18"
+}
