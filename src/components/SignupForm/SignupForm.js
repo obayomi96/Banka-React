@@ -78,8 +78,12 @@ class SignupForm extends Component {
 };
 
 SignupForm.propTypes = {
-  auth: PropTypes.string.isRequired,
-  history: PropTypes.func.isRequired,
+  auth: PropTypes.shape({
+    signup: PropTypes.func,
+  }),
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }),
   userSignup: PropTypes.func.isRequired,
 };
 

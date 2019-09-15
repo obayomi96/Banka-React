@@ -4,14 +4,16 @@ import { ToastContainer } from 'react-toastify'
 import LandingPage from './components/LandingPage';
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
+import Dashboard from './components/Dashboard';
 
 const App = () => (
   <BrowserRouter>
   <ToastContainer />
     <Switch>
-      <Route path='/' exact component={LandingPage} />
-      <Route path='/signup' component={SignupPage} />
-      <Route path='/login' component={LoginPage} />
+      <Route exact path='/' component={LandingPage} />
+      <Route exact path='/signup' component={SignupPage} />
+      <Route exact path='/login' component={LoginPage} />
+      <Route exact path='/dashboard' component={Dashboard} />
     </Switch>
   </BrowserRouter>
 );
