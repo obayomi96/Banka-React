@@ -1,0 +1,63 @@
+{
+  "name": "reactbanka",
+  "version": "1.0.0",
+  "description": "React banka API consumed with React & Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "export DEBUG=prod && node server/app.js",
+    "dev": "webpack-dev-server --open --config webpack/webpack.config.js --env.env=dev",
+    "build": "webpack --config webpack/webpack.config.js --env.env=prod"
+  },
+  "repository": {
+    "type": "gÎit",
+    "url": "git+https://github.com/obayomi96/ReactBanka.git"
+  },
+  "keywords": [
+    "Banka",
+    "React",
+    "Redux",
+    "Andela"
+  ],
+  "author": "martins obayomi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/obayomi96/ReactBanka/issues"
+  },
+  "homepage": "https://github.com/obayomi96/ReactBanka#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
+  }
+}

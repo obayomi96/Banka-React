@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  font-size: 17px;
+  color: var(--primaryColor);
+  line-height: 1.6;
+}
