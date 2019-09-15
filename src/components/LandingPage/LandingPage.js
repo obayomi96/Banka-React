@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class LandingPage extends Component {
   styleColor = {
@@ -24,4 +24,4 @@ class LandingPage extends Component {
   }
 };
 
-export default LandingPage;
+export default withRouter(LandingPage);
