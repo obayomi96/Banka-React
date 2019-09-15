@@ -1,24 +1,3 @@
-import React, { Component } from 'react';
-
-class Loader extends Component {
-	render() {
-		return (
-			<div class="loader">
-				<div class="loaderContent">
-					<div class="lds-roller">
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-				</div>
-			</div>
-		)
-	}
-}
+import Loader from './Loader';
 
 export default Loader;
