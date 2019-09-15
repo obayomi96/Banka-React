@@ -1,5 +1,3 @@
-/* eslint-disable import/order */
-
 import { axiosPostCall } from '../../utils/axios';
 import { signupUrl } from '../../constants/url';
 import { USER_SIGNUP_LOADING, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAILURE } from '../actionTypes';
