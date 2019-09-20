@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { userLogin } from '../../actions/authActions/loginActions';
 import Sidebar from '../Sidebar';
 
 class Dashboard extends React.Component {

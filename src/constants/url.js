@@ -10,7 +10,20 @@ const loginUrl = () => {
   return url;
 };
 
+const createAccountUrl = () => {
+  const url = `${baseUrl}/accounts`;
+  return url;
+};
+
+const getAccountUrl = () => {
+  const email = localStorage.getItem('email');
+  const url = `${baseUrl}/user/${email}/accounts`;
+  return url;
+};
+
 export {
   signupUrl,
   loginUrl,
+  createAccountUrl,
+  getAccountUrl,
 };
