@@ -1,22 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import profileImg from '../../assets/images/profileImg.jpg';
 
-const Sidebar = () => {
-  return (
-    <div className="sidebar">
-      <div className="sidebarItems">
-        <div id="innerNav">
-          <Link to="/dashboard"><i className="fas fa-piggy-bank" id="logo"></i></Link>
+class Sidebar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="sidebar">
+        <div className="sidebarItems">
+          <div id="innerNav">
+            <Link to="/dashboard"><i className="fas fa-piggy-bank" id="logo"></i></Link>
+          </div>
+          <img src="https://via.placeholder.com/1000" alt="" />
+          <div><Link to="/accountHistory">Account History</Link></div>
+          <div><Link to="/userAccounts">My Accounts</Link></div>
+          <div><Link id="createAccount" to="/createAccount">Create Account</Link></div>
+          <div onClick={this.props.handleLogout}>
+            <Link to="#">Logout</Link>
+          </div>
         </div>
-        <img src={profileImg} alt="" />
-        <div><Link to="/accountHistory">Account History</Link></div>
-        <div><Link to="/userAccounts">My Accounts</Link></div>
-        <div><Link id="createAccount" to="/createAccount">Create Account</Link></div>
-        <div><Link to="#">Logout</Link></div>
       </div>
-    </div>
-  )
+    )
+  }
 };
 
 export default Sidebar;
