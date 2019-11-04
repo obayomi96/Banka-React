@@ -1,7 +1,7 @@
 import { GET_USER_ACCOUNTS } from '../actions/actionTypes';
 
 export const intitialState = {
-  accounts: null
+  accounts: []
 };
 
 export const accountReducer = (state = intitialState, action) => {

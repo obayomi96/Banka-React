@@ -22,7 +22,6 @@ class LoginForm extends Component {
     e.preventDefault();
     const { email, password } = this.state;
     const { signIn, history } = this.props;
-    console.log('state', this.state);
 
     signIn({
       email,
@@ -31,13 +30,9 @@ class LoginForm extends Component {
   }
   render() {
 
-    // const { email, password } = this.state;
-
     const {
       loading,
     } = this.props;
-
-    // const loader = <PulseLoader  sizeUnit={"px"} size={10} color={'#fff'} loading={authenticating} />
 
     return (
       <div className="formModal">
@@ -77,13 +72,11 @@ class LoginForm extends Component {
 LoginForm.propTypes = {
   signIn: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
-  // authenticated: PropTypes.bool.isRequired,
   history: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({
   loading: state.auth.loading,
-  // authenticated: state.auth.authenticated
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Sidebar from '../Sidebar';
 import GetAccounts from '../GetAccounts';
+import { generateKeyPair } from 'crypto';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -15,16 +16,19 @@ class Dashboard extends Component {
     }
   }
 
+  myAccountStyle = {
+    textDecoration: 'underline',
+    marginBottom: '20px',
+    color: 'grey',
+  }
+
   logout = () => {
-    console.log('f', this.props)
     const { history } = this.props;
     history.push("/");
     localStorage.clear();
   }
 
   render() {
-    // const { user: { firstname, lastname, email } } = this.props;
-    console.log('this props', this.props);
 
     return (
       <div>
@@ -61,6 +65,7 @@ class Dashboard extends Component {
               <div>
                 <div>
                   <div className="bankAccountInfo">
+                    <h4 style={this.myAccountStyle}>My Accounts</h4>
                     <GetAccounts />
                   </div>
                 </div>
