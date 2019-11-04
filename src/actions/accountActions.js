@@ -2,13 +2,12 @@ import { toast } from 'react-toastify';
 import { LOADING, NOT_LOADING, GET_USER_ACCOUNTS } from './actionTypes';
 import axiosInstance from '../utils/axios';
 
-export const getAccounts = () => async (dispatch) => {
+export const getAccounts = (userEmail) => async (dispatch) => {
   dispatch({
     type: LOADING,
   });
   try {
-    const accountNumber = 717042260;
-    const response = await axiosInstance.get(`accounts/${accountNumber}`);
+    const response = await axiosInstance.get(`users/${userEmail}/accounts`);
     if (response.status === 200) {
       const { data } = response.data;
       return dispatch({

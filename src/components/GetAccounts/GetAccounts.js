@@ -4,26 +4,36 @@ import { getAccounts } from '../../actions/accountActions';
 
 class GetAccounts extends Component {
   state = {
-    accounts: null,
+    accounts: [],
+    email: this.props.user.email
   };
 
-  async componentDidMount() {
-    const response = await getUserAccount();
+  divStyle = {
+    textAlign: 'left',
+  }
+
+  componentDidMount = async () => {
+    const { getUserAccount } = this.props;
+    const response = await getUserAccount(this.state.email);
     this.setState({
       ...this.state,
       accounts: response.payload,
     });
   }
 
-  userAcc = () => {
-    if (this.state.accounts === null || this.state.accounts === undefined) {
-      return <div>No Account Found </div>
-    }
-  }
-
-  render() {
+  render = () => {
+    const userAccounts = this.state.accounts.map((acc, index) => {
+      return (
+        <div key={index} style={this.divStyle}>
+          <h4>Account Number: {acc.accountNumber}</h4>
+          <h4>Banlance: {acc.balance}</h4>
+          <h4>Account Status: {acc.status}</h4>
+          <h4>Account Type: {acc.type}</h4>
+        </div>
+      )
+    })
     return (
-      <div>{this.userAcc()}</div>
+      <div>{userAccounts}</div>
     );
   }
 };
@@ -36,7 +46,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  getUserAccount: () => dispatch(getAccounts()),
+  getUserAccount: userEmail => dispatch(getAccounts(userEmail)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GetAccounts);
