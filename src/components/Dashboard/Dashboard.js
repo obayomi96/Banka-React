@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Sidebar from '../Sidebar';
 import GetAccounts from '../GetAccounts';
-import { generateKeyPair } from 'crypto';
 
 class Dashboard extends Component {
   constructor(props) {
