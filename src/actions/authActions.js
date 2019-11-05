@@ -48,13 +48,13 @@ export const signUp = (userData, history) => async (dispatch) => {
 			setToken(currentUser(jwtDecode(data.token)));
 			history.push('/createAccount');
 			toastdismiss();
-			toast.success(`welcome to banka ${data.firstname}`)
+			toast.success(`welcome to banka, please create a bank account ${data.firstname}`)
 		}
 		return dispatch({
 			type: NOT_LOADING,
 		});
 	} catch (err) {
-		const { error } = err.response.data;
+		const { error } = err.response;
 		toast.dismiss();
 		toast.error(error, { autoClose: 2000 });
 		return dispatch({
