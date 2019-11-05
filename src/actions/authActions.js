@@ -54,7 +54,6 @@ export const signUp = (userData, history) => async (dispatch) => {
 			type: NOT_LOADING,
 		});
 	} catch (err) {
-		console.log(err)
 		const { error } = err.response.data;
 		toast.dismiss();
 		toast.error(error, { autoClose: 2000 });
