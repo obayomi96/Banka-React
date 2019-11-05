@@ -23,8 +23,8 @@ class Dashboard extends Component {
 
   logout = () => {
     const { history } = this.props;
-    history.push("/");
     localStorage.clear();
+    history.push("/login");
   }
 
   render() {

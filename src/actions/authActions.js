@@ -27,7 +27,6 @@ export const login = (userData, history) => async (dispatch) => {
 			type: NOT_LOADING,
 		});
 	} catch (err) {
-		console.log('login err', err.response);
 		const { error } = err.response.data;
 		toast.dismiss();
 		toast.error(error, { autoClose: 2000 });

@@ -6,7 +6,7 @@ import LandingPage from './components/LandingPage';
 // import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import Dashboard from './components/Dashboard';
-// import CreateAccount from './components/CreateAccount';
+import CreateAccount from './components/CreateAccount';
 
 const App = () => (
   <BrowserRouter>
@@ -17,7 +17,7 @@ const App = () => (
       {/* <Route exact path='/signup' component={SignupPage} /> */}
       <Route exact path='/login' component={LoginPage} />
       <Route exact path='/dashboard' component={Dashboard} />
-      {/* <Route path='/createAccount' component={CreateAccount} /> */}
+      <Route exact path='/createAccount' component={CreateAccount} />
     </Switch>
   </BrowserRouter>
 );

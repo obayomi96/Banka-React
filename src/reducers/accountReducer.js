@@ -1,7 +1,8 @@
-import { GET_USER_ACCOUNTS } from '../actions/actionTypes';
+import { GET_USER_ACCOUNTS, LOADING } from '../actions/actionTypes';
 
 export const intitialState = {
-  accounts: []
+  accounts: [],
+  loading: false,
 };
 
 export const accountReducer = (state = intitialState, action) => {
@@ -11,7 +12,12 @@ export const accountReducer = (state = intitialState, action) => {
         ...state,
         accounts: action.payload,
       };
-      default:
+    case LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+    default:
         return state;
   }
 };

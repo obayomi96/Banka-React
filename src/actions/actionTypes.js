@@ -2,4 +2,4 @@ export const CURRENT_USER = 'CURRENT_USER';
 export const LOADING = 'LOADING';
 export const NOT_LOADING = 'NOT_LOADING';
 export const CREATE_USER_ACCOUNT = 'CREATE_BANK_ACCOUNT';
-export const GET_USER_ACCOUNTS = 'GET_BANK_ACCOUN';
+export const GET_USER_ACCOUNTS = 'GET_USER_ACCOUNT';
