@@ -31,7 +31,7 @@ class CreateAccount extends Component {
           <h4>Create a bank account</h4>
           <form onSubmit={this.handleSubmit}>
             <div>
-              <input onChange={this.handleChange} type="text" placeholder="Savings or Current" id="type" className="formInput" />
+              <input onChange={this.handleChange} type="text" placeholder="savings or current" id="type" className="formInput" />
             </div>
             <div>
               <button id="submitBtn" className="loginBtn">

@@ -23,8 +23,8 @@ class SignupForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const { firstname, lastname, email, password } = this.state;
-    const { userSignup } = this.props;
-    userSignup({ firstname, lastname, email, password });
+    const { userSignup, history } = this.props;
+    userSignup({ firstname, lastname, email, password }, history);
   };
 
   render() {
@@ -70,9 +70,7 @@ SignupForm.propTypes = {
   auth: PropTypes.shape({
     signup: PropTypes.func,
   }),
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }),
+  history: PropTypes.object.isRequired,
   userSignup: PropTypes.func.isRequired,
 };
 
@@ -81,7 +79,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  userSignup: (userObject) => dispatch(signUp(userObject)),
+  userSignup: (userObject, history) => dispatch(signUp(userObject, history)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SignupForm));
