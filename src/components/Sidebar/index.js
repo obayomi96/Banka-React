@@ -14,8 +14,6 @@ class Sidebar extends React.Component {
             <Link to="/dashboard"><i className="fas fa-piggy-bank" id="logo"></i></Link>
           </div>
           <img src="https://via.placeholder.com/1000" alt="" />
-          <div><Link to="/accountHistory">Account History</Link></div>
-          <div><Link to="/userAccounts">My Accounts</Link></div>
           <div><Link id="createAccount" to="/createAccount">Create Account</Link></div>
           <div onClick={this.props.handleLogout}>
             <Link to="#">Logout</Link>
