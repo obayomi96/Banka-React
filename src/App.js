@@ -7,6 +7,7 @@ import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import Dashboard from './components/Dashboard';
 import CreateAccount from './components/CreateAccount';
+import ProtectedRoute from './HOC/ProtectedRoute';
 
 const App = () => (
   <BrowserRouter>
@@ -16,8 +17,8 @@ const App = () => (
       <Route exact path='/' component={LandingPage} />
       <Route exact path='/signup' component={SignupPage} />
       <Route exact path='/login' component={LoginPage} />
-      <Route exact path='/dashboard' component={Dashboard} />
-      <Route exact path='/createAccount' component={CreateAccount} />
+      <ProtectedRoute path='/dashboard' component={Dashboard} />
+      <ProtectedRoute path='/createAccount' component={CreateAccount} />
     </Switch>
   </BrowserRouter>
 );
