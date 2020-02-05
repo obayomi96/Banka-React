@@ -6,7 +6,7 @@ import { getAccounts } from '../../actions/accountActions';
 class GetAccounts extends Component {
   state = {
     accounts: [],
-    email: this.props.user.email,
+    email: "",
   };
 
   divStyle = {
@@ -20,8 +20,8 @@ class GetAccounts extends Component {
   }
 
   componentDidMount = async () => {
-    const { getUserAccount } = this.props;
-    const response = await getUserAccount(this.state.email);
+    const { getUserAccount, user } = this.props;
+    const response = await getUserAccount(user.email);
     this.setState({
       ...this.state,
       accounts: response.payload,
@@ -31,16 +31,16 @@ class GetAccounts extends Component {
   render = () => {
     const { accounts } = this.state;
     const { loading } = this.props;
-    if (accounts === undefined || accounts === null || accounts === []) {
-      return (
-        <div>You have no bank account, kindly create one</div>
-      );
-    }
+    // if (accounts === undefined || accounts === null || accounts === []) {
+    //   return (
+    //     <div>You have no bank account, kindly create one</div>
+    //   );
+    // }
     const userAccounts = accounts.map((acc, index) => {
       return (
         <div key={index} style={this.divStyle}>
           <h4>Account Number: {acc.accountNumber}</h4>
-          <h4>Banlance: ${acc.balance}</h4>
+          <h4>Balance: ${acc.balance}</h4>
           <h4>Account Status: {acc.status}</h4>
         </div>
       )
