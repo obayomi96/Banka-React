@@ -9,16 +9,6 @@ class GetAccounts extends Component {
     email: "",
   };
 
-  divStyle = {
-    textAlign: 'left',
-    background: '#ddd',
-    display: 'grid',
-    lineHeight: '2.5',
-    marginBottom: '20px',
-    borderRadius: '5px',
-    boxShadow: '15px 14px 42px -22px rgba(0,0,0,0.75)',
-  }
-
   componentDidMount = async () => {
     const { getUserAccount, user } = this.props;
     const response = await getUserAccount(user.email);
@@ -31,14 +21,14 @@ class GetAccounts extends Component {
   render = () => {
     const { accounts } = this.state;
     const { loading } = this.props;
-    // if (accounts === undefined || accounts === null || accounts === []) {
-    //   return (
-    //     <div>You have no bank account, kindly create one</div>
-    //   );
-    // }
+    if ( accounts === []) {
+      return (
+        <div style={{textAlign: 'center'}}>No account!</div>
+      );
+    }
     const userAccounts = accounts.map((acc, index) => {
       return (
-        <div key={index} style={this.divStyle}>
+        <div key={index} id="userAccount-accountDetails">
           <h4>Account Number: {acc.accountNumber}</h4>
           <h4>Balance: ${acc.balance}</h4>
           <h4>Account Status: {acc.status}</h4>

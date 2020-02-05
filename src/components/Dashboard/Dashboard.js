@@ -58,13 +58,13 @@ class Dashboard extends Component {
              {
               <ul>
                 <li>
-                  <b>{`Firstname: ${this.state.firstname}`}</b>
+                  {`Firstname:   ${this.state.firstname.toUpperCase()}`}
                 </li>
                 <li>
-                  <b>{`Lastname: ${this.state.lastname}`}</b>
+                  {`Lastname:   ${this.state.lastname.toUpperCase()}`}
                 </li>
                 <li>
-                  <b>{`Email: ${this.state.email}`}</b>
+                {`Email: ${this.state.email.toUpperCase()}`}
                 </li>
               </ul>
              }

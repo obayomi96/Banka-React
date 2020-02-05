@@ -121,7 +121,6 @@ nav #menuLogo {
   top: 0px;
   background: none;
   color: var(--white);
-  box-shadow: none;
 }
 
 #navbar {
@@ -181,12 +180,31 @@ nav #menuLogo {
   line-height: 30px;
 }
 .userAccountCoverPage #accountSection .details {
-  background: #ddd !important;
+  background: #ddd;
   border-radius: 4px;
-  margin-bottom: 50px;
-  border: 1px black solid;
+  border: 1px #ddd dotted;
   text-align: left;
+  font-size: 15px;
+  padding: 0;
+  padding-left: 15px;
+  color: grey;
+  -webkit-box-shadow: 1px 1px 9px -1px rgba(0,0,0,0.69);
+  -moz-box-shadow: 1px 1px 9px -1px rgba(0,0,0,0.69);
+  box-shadow: 1px 1px 9px -1px rgba(0,0,0,0.69); 
 }
+
+#userAccount-accountDetails {
+  text-align: left;
+  background: #ddd;
+  display: grid;
+  line-height: 2.5;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 9px -1px rgba(0,0,0,0.69);
+  -moz-box-shadow: 1px 1px 9px -1px rgba(0,0,0,0.69);
+  box-shadow: 1px 1px 9px -1px rgba(0,0,0,0.69); 
+}
+
 .userAccountCoverPage #accountSection {
   text-align: left;
   margin: 0 auto;
@@ -203,8 +221,9 @@ div.bankAccountInfo.user {
 .userAccountCoverPage h4 {
   text-align: left;
   font-size: 15px;
-  margin-left: 10%;
   padding: 0;
+  padding-left: 20px;
+  color: grey;
 }
 
 div.topDivs {
@@ -221,7 +240,6 @@ div.topDivs {
 .userAccountCoverPage div.viewAllBtn {
   float: right;
   font-size: 20px;
-  /* padding-left: 40px; */
 }
 #accountSection ul li b {
   padding: 0 5px;
@@ -698,7 +716,7 @@ footer {
   .transactionPage,
   .userAccountCoverPage {
     width: calc(100% - 15%);
-    margin-left: 15%;
+    padding-left: 20px;
   }
   .transactionPage {
     margin-top: 150px;
@@ -761,7 +779,7 @@ footer {
   }
   .userAccountCoverPage h4 {
     font-size: 25px;
-    margin-left: 18%;
+    padding-left: 20px;
   }
   div.infoDiv {
     font-size: 20px;
@@ -786,7 +804,7 @@ footer {
     padding: 0 5px;
   }
   .userAccountCoverPage #accountSection .details {
-    width: 80%;
+    width: 77.9%;
     margin-left: 10%;
     font-size: 20px;
     line-height: 45px;
@@ -823,7 +841,6 @@ footer {
     left: 0;
     top: 0;
     bottom: 0;
-    /* height: 100%; */
     min-height: 100%;
     width: 45%;
     margin-left: -45%;
@@ -831,7 +848,6 @@ footer {
     color: var(--white);
     transition: all 0.5s;
     z-index: 1;
-    /* opacity: 0.9; */
   }
 
   .sidebar #logo {
@@ -841,7 +857,6 @@ footer {
   }
   .accountInfo {
     width: 100%;
-    /* line-height: 40px; */
     font-size: 25px;
   }
   nav span {
@@ -907,13 +922,11 @@ footer {
     overflow: hidden;
     max-width: 80%;
     margin: 0 auto;
-    /* min-width: 500px; */
   }
   #accountSection .user {
     overflow: hidden;
     max-width: 65%;
     margin: 0 auto;
-    /* min-width: 500px; */
   }
   .bankAccountInfo .innerFooter {
     width: 50%;

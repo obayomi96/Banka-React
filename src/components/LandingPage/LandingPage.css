@@ -1,0 +1,13 @@
+.loginCoverPage > h1 {
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5%;
+}
+.loginCoverPage > .formModal > a{
+  transition: 0.5s;
+}
+.loginCoverPage > .formModal > a:hover {
+  color: #0c1824;
+  letter-spacing: 0.2rem;
+  transition: 0.5s;
+}
