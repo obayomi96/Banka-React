@@ -6,10 +6,13 @@ import { getAccounts } from '../../actions/accountActions';
 import './GetAccounts.css';
 
 class GetAccounts extends Component {
-  state = {
-    accounts: [],
-    email: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      accounts: [],
+      email: "",
+    };
+  }
 
   componentDidMount = async () => {
     const { getUserAccount, user } = this.props;
@@ -30,7 +33,7 @@ class GetAccounts extends Component {
     }
     const userAccounts = accounts.map((acc, index) => {
       return (
-        <div class="fade-in" key={index} id="userAccount-accountDetails">
+        <div className="fade-in" key={index} id="userAccount-accountDetails">
           <h4>Account Number: {acc.accountNumber}</h4>
           <h4>Balance: ${acc.balance}</h4>
           <h4>Account Status: {acc.status}</h4>

@@ -11,8 +11,9 @@ class Dashboard extends Component {
     this.state = {
       firstname: '',
       lastname: '',
-      email: ''
-    }
+      email: '',
+      isOpened: false,
+    };
   }
 
   myAccountStyle = {
@@ -20,6 +21,19 @@ class Dashboard extends Component {
     marginBottom: '20px',
     color: 'grey',
   }
+
+  toggleSidebar = () => {
+    const sideBarItems = document.querySelector('.sidebar');
+    if (this.state.isOpened) {
+      sideBarItems.style.marginLeft = '-45%';
+    } else {
+      sideBarItems.style.marginLeft = '0';
+    }
+    this.setState({
+      isOpened: !this.state.isOpened
+    })
+  };
+  
 
   componentDidMount() {
     const { user } = this.props;
@@ -37,7 +51,6 @@ class Dashboard extends Component {
   }
 
   render() {
-
     return (
       <div>
         <Sidebar
@@ -46,11 +59,10 @@ class Dashboard extends Component {
         <div className="userAccountCoverPage">
           <nav className="landingProfile">
             <div>
-              <h4>
-                banka</h4>
+              <h4></h4>
             </div>
             <div>
-              <i className="fas fa-bars" id="menuLogo"></i>
+              <i onMouseDown={this.toggleSidebar} className="fas fa-bars" id="menuLogo"></i>
             </div>
           </nav>
           <div id="accountSection">
@@ -58,10 +70,10 @@ class Dashboard extends Component {
              {
               <ul>
                 <li>
-                  {`Firstname:   ${this.state.firstname.toUpperCase()}`}
+                  {`Firstname: ${this.state.firstname.toUpperCase()}`}
                 </li>
                 <li>
-                  {`Lastname:   ${this.state.lastname.toUpperCase()}`}
+                  {`Lastname: ${this.state.lastname.toUpperCase()}`}
                 </li>
                 <li>
                 {`Email: ${this.state.email.toUpperCase()}`}

@@ -15,7 +15,6 @@ export const login = (userData, history) => async (dispatch) => {
 	});
 	try {
 		const response = await axiosInstance.post('auth/signin', userData);
-		console.log('response', response);
 		if (response.status === 200) {
 			const { data } = response.data;
 			localStorage.setItem('userJwtToken', data.token);
@@ -33,17 +32,19 @@ export const login = (userData, history) => async (dispatch) => {
 			type: NOT_LOADING,
 		});
 	} catch (err) {
-		const { error } = err.response.data;
-		console.log(error);
-		swal({
-			text: 'Invalid!, check your credentials and try again',
-			icon: 'error',
-			button: true,
-			timer: 5000,
-		});
-		return dispatch({
-				type: NOT_LOADING,
-		});
+		if (err) {
+			const { error } = err.response.data;
+			console.log(error);
+			swal({
+				text: 'Invalid!, check your credentials and try again',
+				icon: 'error',
+				button: true,
+				timer: 5000,
+			});
+			return dispatch({
+					type: NOT_LOADING,
+			});
+		}
 	}
 };
 
@@ -71,7 +72,6 @@ export const signUp = (userData, history) => async (dispatch) => {
 	} catch (err) {
 		if (err) {
 			const { error } = err.response.data;
-			console.log(error);
 			swal({
 				text: error,
 				icon: 'error',

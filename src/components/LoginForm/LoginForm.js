@@ -7,9 +7,12 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/authActions';
 
 class LoginForm extends Component {
-  state = {
-    email: '',
-    password: '',
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+    }
   }
 
   handleChange = (e) => {
