@@ -49,59 +49,6 @@ nav {
   justify-content: space-between;
   text-align: center;
 }
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 45%;
-  margin-left: -45%;
-  background: var(--primaryColor);
-  color: var(--white);
-  transition: all 0.5s;
-  z-index: 100;
-}
-.sidebar #logo {
-  color: var(--white) !important;
-  font-size: 60px;
-  padding: 2px 5px;
-  margin: 0 0 25px 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.sidebarItems {
-  padding-left: 15px;
-  line-height: 50px;
-  align-items: center;
-  margin: 40px auto;
-  box-sizing: border-box;
-}
-.sidebar img {
-  height: 120px;
-  width: 120px;
-  border-radius: 100%;
-  margin: 50px auto 0 auto;
-  transition: 0.5s;
-}
-.sidebar img:hover {
-  opacity: 0.8;
-  transition: 0.5s;
-}
-.sidebarItems a {
-  padding-top: 50px;
-  font-size: 18px;
-  text-decoration: none;
-  color: var(--white);
-  text-align: center;
-}
-.sidebarItems a:hover {
-  cursor: pointer;
-  color: #d9cec6;
-}
-.sidebar .userName {
-  display: none;
-}
 .landingProfile h4 {
   color: var(--black);
   justify-content: flex-start;

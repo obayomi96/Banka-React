@@ -35,7 +35,6 @@ export const createAccount = (accountDetails) => async (dispatch) => {
     const response = await axiosInstance.post('accounts', accountDetails);
     if (response.status === 201) {
       const { message } = response.data;
-      console.log('resda', response.data);
       swal({
 				text: message,
 				icon: 'success',
@@ -49,7 +48,6 @@ export const createAccount = (accountDetails) => async (dispatch) => {
       });
   } catch (err) {
     const { error } = err.response.data;
-    console.log(error);
 		swal({
 			text: error,
 			icon: 'error',

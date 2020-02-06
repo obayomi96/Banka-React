@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import { createAccount } from '../../actions/accountActions';
 
 class CreateAccount extends Component {
-  state = {
-    type: "savings",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: "savings",
+    };
+  }
 
   handleChange = (e) => {
     const t = e.target.id;
