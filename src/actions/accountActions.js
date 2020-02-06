@@ -1,4 +1,4 @@
-import { toast } from 'react-toastify';
+import swal from '@sweetalert/with-react';
 import { LOADING, NOT_LOADING, GET_USER_ACCOUNTS } from './actionTypes';
 import axiosInstance from '../utils/axios';
 
@@ -20,8 +20,7 @@ export const getAccounts = (userEmail) => async (dispatch) => {
     });
   } catch (err) {
     const { error } = err.response.data;
-    toast.dismiss();
-    toast.info(error, 'An error occured', { autoClose: 10000});
+    console.log(error);
     return dispatch({
       type: NOT_LOADING,
     });
@@ -35,17 +34,28 @@ export const createAccount = (accountDetails) => async (dispatch) => {
   try {;
     const response = await axiosInstance.post('accounts', accountDetails);
     if (response.status === 201) {
-      toast.dismiss();
-      toast.success('Account created successfully');
-      dispatch(getAccounts());
-      dispatch({
+      const { message } = response.data;
+      console.log('resda', response.data);
+      swal({
+				text: message,
+				icon: 'success',
+				button: true,
+				timer: 4000,
+      });
+      return dispatch(getAccounts());
+    }
+      return dispatch({
         type: NOT_LOADING,
       });
-    }
   } catch (err) {
     const { error } = err.response.data;
-    toast.dismiss();
-    toast.error(error, { autoClose: 10000 });
+    console.log(error);
+		swal({
+			text: error,
+			icon: 'error',
+			button: true,
+			timer: 5000,
+		});
     return dispatch({
       type: NOT_LOADING,
     });

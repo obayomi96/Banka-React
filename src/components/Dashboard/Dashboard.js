@@ -9,9 +9,9 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstname: this.props.user.firstname,
-      lastname: this.props.user.lastname,
-      email: this.props.user.email,
+      firstname: '',
+      lastname: '',
+      email: ''
     }
   }
 
@@ -19,6 +19,15 @@ class Dashboard extends Component {
     textDecoration: 'underline',
     marginBottom: '20px',
     color: 'grey',
+  }
+
+  componentDidMount() {
+    const { user } = this.props;
+    this.setState({
+      firstname: user.firstname,
+      lastname: user.lastname,
+      email: user.email,
+    });
   }
 
   logout = () => {
@@ -49,13 +58,13 @@ class Dashboard extends Component {
              {
               <ul>
                 <li>
-                  <b>{`Firstname: ${this.state.firstname}`}</b>
+                  {`Firstname:   ${this.state.firstname.toUpperCase()}`}
                 </li>
                 <li>
-                  <b>{`Lastname: ${this.state.lastname}`}</b>
+                  {`Lastname:   ${this.state.lastname.toUpperCase()}`}
                 </li>
                 <li>
-                  <b>{`Email: ${this.state.email}`}</b>
+                {`Email: ${this.state.email.toUpperCase()}`}
                 </li>
               </ul>
              }

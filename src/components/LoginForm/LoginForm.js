@@ -37,7 +37,7 @@ class LoginForm extends Component {
     return (
       <div className="formModal">
         <Link to="/">
-          <h1>banka</h1>
+          <h1>Login to Banka</h1>
         </Link>
         <form onSubmit={this.handleSubmit}>
           <div>

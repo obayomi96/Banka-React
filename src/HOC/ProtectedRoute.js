@@ -6,7 +6,7 @@ const ProtectedRoute = ({ component, history, dispatch, ...rest }) => {
   const tokenExists = window.localStorage.getItem('userJwtToken');
   const Component = component;
   if(!tokenExists) {
-    history.push('/');
+    history.push('/login');
     dispatch({ type: 'NOT_LOADING', path: rest.path });
     return false;
   }

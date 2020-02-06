@@ -31,9 +31,7 @@ class SignupForm extends Component {
     const { loading } = this.props;
     return (
       <div className="formModal">
-        <Link to="/">
-          <h1>banka</h1>
-        </Link>
+          <h4 style={{fontSize:'25px'}}> Register and begin to enjoy the amazing services we offer at Banka</h4>
         <form onSubmit={this.handleSubmit}>
           <div>
             <input onChange={this.handleChange} id="firstname" required type="text" className="formInput" name="firstname" placeholder="Firstname" />

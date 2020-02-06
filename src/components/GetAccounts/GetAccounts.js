@@ -3,25 +3,17 @@ import { connect } from 'react-redux';
 import { PulseLoader } from 'react-spinners';
 import { getAccounts } from '../../actions/accountActions';
 
+import './GetAccounts.css';
+
 class GetAccounts extends Component {
   state = {
     accounts: [],
-    email: this.props.user.email,
+    email: "",
   };
 
-  divStyle = {
-    textAlign: 'left',
-    background: '#ddd',
-    display: 'grid',
-    lineHeight: '2.5',
-    marginBottom: '20px',
-    borderRadius: '5px',
-    boxShadow: '15px 14px 42px -22px rgba(0,0,0,0.75)',
-  }
-
   componentDidMount = async () => {
-    const { getUserAccount } = this.props;
-    const response = await getUserAccount(this.state.email);
+    const { getUserAccount, user } = this.props;
+    const response = await getUserAccount(user.email);
     this.setState({
       ...this.state,
       accounts: response.payload,
@@ -31,16 +23,16 @@ class GetAccounts extends Component {
   render = () => {
     const { accounts } = this.state;
     const { loading } = this.props;
-    if (accounts === undefined || accounts === null || accounts === []) {
+    if ( accounts === []) {
       return (
-        <div>You have no bank account, kindly create one</div>
+        <div style={{textAlign: 'center'}}>No account!</div>
       );
     }
     const userAccounts = accounts.map((acc, index) => {
       return (
-        <div key={index} style={this.divStyle}>
+        <div class="fade-in" key={index} id="userAccount-accountDetails">
           <h4>Account Number: {acc.accountNumber}</h4>
-          <h4>Banlance: ${acc.balance}</h4>
+          <h4>Balance: ${acc.balance}</h4>
           <h4>Account Status: {acc.status}</h4>
         </div>
       )

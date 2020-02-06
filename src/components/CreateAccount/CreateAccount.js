@@ -53,7 +53,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  create: data => dispatch(createAccount(data)),
+  create: (data) => dispatch(createAccount(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateAccount);
