@@ -32,19 +32,17 @@ export const login = (userData, history) => async (dispatch) => {
 			type: NOT_LOADING,
 		});
 	} catch (err) {
-		if (err) {
-			const { error } = err.response.data;
-			console.log(error);
-			swal({
-				text: 'Invalid!, check your credentials and try again',
-				icon: 'error',
-				button: true,
-				timer: 5000,
-			});
-			return dispatch({
-					type: NOT_LOADING,
-			});
-		}
+		const { error } = err.response.data;
+		console.log(error);
+		swal({
+			text: 'Invalid!, check your credentials and try again',
+			icon: 'error',
+			button: true,
+			timer: 5000,
+		});
+		return dispatch({
+				type: NOT_LOADING,
+		});
 	}
 };
 
@@ -70,17 +68,15 @@ export const signUp = (userData, history) => async (dispatch) => {
 			type: NOT_LOADING,
 		});
 	} catch (err) {
-		if (err) {
-			const { error } = err.response.data;
-			swal({
-				text: error,
-				icon: 'error',
-				button: true,
-				timer: 5000,
-			});
-			return dispatch({
-				type: NOT_LOADING,
-			});
-		}
+		const { error } = err.response.data;
+		swal({
+			text: error,
+			icon: 'error',
+			button: true,
+			timer: 5000,
+		});
+		return dispatch({
+			type: NOT_LOADING,
+		});
 	}
 }
