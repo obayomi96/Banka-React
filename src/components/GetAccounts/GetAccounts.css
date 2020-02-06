@@ -1,0 +1,66 @@
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  /* 25% {opacity: 0.25;}
+  50% {opacity: 0.50;} */
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/* @-webkit-keyframes slideIn {
+  0% {left: -1000px; top: 0px;}
+  100% {left: 0px; top: 0px;}
+} */
+
+@keyframes slideIn {
+  0% {right: -1000px; top: 0px;}
+  100% {right: 0px; top: 0px;}
+}
+
+.fade-in{
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.fade-out{
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+.fade-out-delay{
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+  animation-name: fadeIn;
+  animation-duration: 5s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+/* .slide-in{
+  position: relative;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 2s;
+  animation-name: slideIn;
+  animation-duration: 1s;
+}
+
+.slide-delay{
+  animation-duration: 1.2s;
+}
+
+.slide-delay1{
+  animation-duration: 1.4s;
+}
+
+.slide-delay2{
+  animation-duration: 1.6s;
+} */

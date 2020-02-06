@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { PulseLoader } from 'react-spinners';
 import { getAccounts } from '../../actions/accountActions';
 
+import './GetAccounts.css';
+
 class GetAccounts extends Component {
   state = {
     accounts: [],
@@ -28,7 +30,7 @@ class GetAccounts extends Component {
     }
     const userAccounts = accounts.map((acc, index) => {
       return (
-        <div key={index} id="userAccount-accountDetails">
+        <div class="fade-in" key={index} id="userAccount-accountDetails">
           <h4>Account Number: {acc.accountNumber}</h4>
           <h4>Balance: ${acc.balance}</h4>
           <h4>Account Status: {acc.status}</h4>

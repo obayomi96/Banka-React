@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import userImg from '../../assets/images/userimage.png';
+
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ class Sidebar extends React.Component {
           <div id="innerNav">
             <Link to="/dashboard"><i className="fas fa-piggy-bank" id="logo"></i></Link>
           </div>
-          <img src="https://via.placeholder.com/1000" alt="" />
+          <img src={userImg} alt="profile pic placeholder" />
           <div><Link id="createAccount" to="/createAccount">Create Account</Link></div>
           <div onClick={this.props.handleLogout}>
             <Link to="#">Logout</Link>

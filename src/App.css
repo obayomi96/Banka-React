@@ -63,30 +63,37 @@ nav {
 }
 .sidebar #logo {
   color: var(--white) !important;
-  font-size: 30px;
+  font-size: 60px;
   padding: 2px 5px;
-  margin: 5px 0 25px 1px;
+  margin: 0 0 25px 20px;
   position: absolute;
   top: 0;
+  left: 0;
 }
 .sidebarItems {
   padding-left: 15px;
   line-height: 50px;
-  margin: 30px auto;
+  align-items: center;
+  margin: 40px auto;
+  box-sizing: border-box;
 }
 .sidebar img {
-  height: 90px;
-  width: 90px;
+  height: 120px;
+  width: 120px;
   border-radius: 100%;
-  margin: 40px auto 15px auto;
+  margin: 50px auto 0 auto;
+  transition: 0.5s;
 }
 .sidebar img:hover {
   opacity: 0.8;
+  transition: 0.5s;
 }
 .sidebarItems a {
-  font-size: 15px;
+  padding-top: 50px;
+  font-size: 18px;
   text-decoration: none;
   color: var(--white);
+  text-align: center;
 }
 .sidebarItems a:hover {
   cursor: pointer;
