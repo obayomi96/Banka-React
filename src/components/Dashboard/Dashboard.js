@@ -47,6 +47,7 @@ class Dashboard extends Component {
   logout = () => {
     const { history } = this.props;
     localStorage.clear();
+    store.dispatch('NOT_LOADING')
     history.push("/login");
   }
 
