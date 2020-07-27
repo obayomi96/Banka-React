@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'
+import { InternetStatus } from 'react-internet-status';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import SignupPage from './components/SignupPage';
@@ -8,20 +9,12 @@ import LoginPage from './components/LoginPage';
 import Dashboard from './components/Dashboard';
 import CreateAccount from './components/CreateAccount';
 import ProtectedRoute from './HOC/ProtectedRoute';
-import InternetCheck from './components/InternetCheck';
 
 const App = () => (
   <BrowserRouter>
   <ToastContainer />
-    <InternetCheck
-      message="No Connection"
-      style={{
-        color: "#fff",
-        backgroundColor: "red",
-        textAlign: "center"
-      }}
-    />
     <Navbar />
+    <InternetStatus background="#000" textColor="#ddd" />
     <Switch>
       <Route exact path='/' component={LandingPage} />
       <Route exact path='/signup' component={SignupPage} />
