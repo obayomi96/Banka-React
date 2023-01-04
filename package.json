@@ -65,7 +65,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "node-sass": "^4.13.1",
     "react-internet-status": "^1.0.8",
     "sass-loader": "^7.3.1",
